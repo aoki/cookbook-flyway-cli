@@ -29,10 +29,3 @@ execute "flyway-cli" do
      ln -nfs #{install_dir}/versions/flyway-#{version} #{install_dir}/flyway
   EOH
 end
-
-execute "mysql-connector" do
-  command <<-EOH
-     wget http://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-5.1.26.tar.gz -P /tmp
-     tar xzfC /tmp/mysql-connector-java-5.1.26.tar.gz /opt/flyway/flyway/jars
-  EOH
-end
