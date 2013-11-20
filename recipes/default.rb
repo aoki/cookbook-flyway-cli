@@ -7,8 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
-install_dir = "/opt/flyway"
-version = "2.2.1"
+install_dir = node['flyway-cli']['install_dir']
+version = node['flyway-cli']['version']
 
 if version < "2.2" then
   Chef::Log::error "#{cookbook_name} is supported versions in more than 2.2."
