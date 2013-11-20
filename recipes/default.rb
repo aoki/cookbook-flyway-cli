@@ -28,4 +28,5 @@ execute "flyway-cli" do
      tar xzfC /tmp/flyway-commandline-#{version}.tar.gz #{install_dir}/versions
      ln -nfs #{install_dir}/versions/flyway-#{version} #{install_dir}/flyway
   EOH
+  not_if { File.exists?("#{install_dir}/versions/flyway-#{version}") }
 end

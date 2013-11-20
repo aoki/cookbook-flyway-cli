@@ -13,4 +13,5 @@ execute "mysql-connector" do
      tar xzfC /tmp/mysql-connector-java-5.1.26.tar.gz /opt/flyway/flyway/jars
      ln -nfs /opt/flyway/flyway/jars/mysql-connector-java-5.1.26/mysql-connector-java-5.1.26-bin.jar /opt/flyway/flyway/jars//mysql-connector-java-5.1.26-bin.jar
   EOH
+  not_if { File.exists?("/opt/flyway/flyway/jars/mysql-connector-java-5.1.26") }
 end
